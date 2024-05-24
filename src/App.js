@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import ProjectList from "./components/ProjectList";
+import styled from "styled-components";
 
-function App() {
+const AppContainer = styled.div`
+  text-align: center;
+  padding: 20px;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const AppHeader = styled.header`
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #666;
+  }
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <AppHeader>
+        <h1>My Project Hub</h1>
+        <p>Select a project to get started</p>
+      </AppHeader>
+      <ProjectList />
+    </AppContainer>
   );
-}
+};
 
 export default App;
